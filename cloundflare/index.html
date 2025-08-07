@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>探索世界，发现美好 - 您的旅行伴侣</title>
+    <style>
+        /* 基础样式 */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* 头部样式 */
+        header {
+            background-color: #4CAF50; /* 绿色系 */
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-decoration: none;
+            color: white;
+        }
+
+        /* 导航栏样式 */
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 25px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            padding: 5px 0;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            display: block;
+            margin-top: 5px;
+            right: 0;
+            background: white;
+            transition: width 0.3s ease;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+            left: 0;
+            background: white;
+        }
+
+        nav ul li a:hover {
+            color: #E0E0E0; /* 浅色系 */
+        }
+
+        /* 主内容区域样式 */
+        main {
+            padding: 40px 0;
+            min-height: calc(100vh - 200px); /* 确保内容区足够高 */
+            background-color: #f9f9f9;
+        }
+
+        .hero-section {
+            text-align: center;
+            padding: 80px 20px;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://source.unsplash.com/1600x900/?travel,nature') no-repeat center center/cover;
+            color: white;
+            margin-bottom: 40px;
+        }
+
+        .hero-section h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+        }
+
+        .hero-section p {
+            font-size: 1.4rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #FFC107; /* 亮黄色 */
+            color: #333;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #FFA000; /* 橘黄色 */
+        }
+
+        .content-section {
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+        }
+
+        .content-section h2 {
+            text-align: center;
+            color: #4CAF50;
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+        }
+
+        .content-section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .grid-item {
+            background-color: #E8F5E9; /* 浅绿色 */
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .grid-item h3 {
+            color: #2E7D32; /* 深绿色 */
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+        }
+
+        .grid-item p {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        /* 底部样式 */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            font-size: 0.95rem;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+            margin: 0 15px 20px;
+        }
+
+        .footer-section h4 {
+            color: #4CAF50;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .footer-section p, .footer-section ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            color: #BBB;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-section ul li a {
+            color: #BBB;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section ul li a:hover {
+            color: white;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #4CAF50;
+        }
+
+        .copyright {
+            border-top: 1px solid #555;
+            padding-top: 20px;
+            margin-top: 20px;
+            color: #BBB;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .logo {
+                margin-bottom: 15px;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            .hero-section h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-section p {
+                font-size: 1.2rem;
+            }
+
+            .content-section {
+                padding: 20px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer-section {
+                margin: 0 0 20px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <a href="#" class="logo">全球漫游</a>
+            <nav>
+                <ul>
+                    <li><a href="#home">首页</a></li>
+                    <li><a href="#destinations">目的地</a></li>
+                    <li><a href="#services">服务</a></li>
+                    <li><a href="#about">关于我们</a></li>
+                    <li><a href="#contact">联系我们</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero-section">
+            <h1>探索世界，发现美好</h1>
+            <p>与我们一同踏上难忘的旅程，领略地球的壮丽与多彩。</p>
+            <a href="#destinations" class="cta-button">开始你的探险</a>
+        </section>
+
+        <div class="container">
+            <section id="destinations" class="content-section">
+                <h2>热门目的地</h2>
+                <p>无论您是寻求惊险刺激的冒险，还是渴望宁静放松的假期，我们都能为您提供完美的旅行方案。</p>
+                <div class="content-grid">
+                    <div class="grid-item">
+                        <h3>亚洲风情</h3>
+                        <p>探索古老的文明，品尝地道美食，感受独特的东方魅力。</p>
+                    </div>
+                    <div class="grid-item">
+                        <h3>欧洲古韵</h3>
+                        <p>漫步历史悠久的街道，欣赏艺术瑰宝，沉浸在浪漫的氛围中。</p>
+                    </div>
+                    <div class="grid-item">
+                        <h3>美洲奇迹</h3>
+                        <p>从壮丽的国家公园到繁华的都市，感受新世界的无限可能。</p>
+                    </div>
+                    <div class="grid-item">
+                        <h3>非洲野性</h3>
+                        <p>体验激动人心的野生动物之旅，感受大自然的原始呼唤。</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="services" class="content-section">
+                <h2>我们的服务</h2>
+                <p>我们致力于为您提供一站式、个性化的旅行服务，让您的旅途无忧。</p>
+                <div class="content-grid">
+                    <div class="grid-item">
+                        <h3>定制行程</h3>
+                        <p>根据您的兴趣和预算，量身定制专属旅行计划。</p>
+                    </div>
+                    <div class="grid-item">
+                        <h3>机票酒店预订</h3>
+                        <p>为您提供全球范围内的机票和优质酒店预订服务。</p>
+                    </div>
+                    <div class="grid-item">
+                        <h3>签证协助</h3>
+                        <p>专业的签证咨询与协助，简化您的出行手续。</p>
+                    </div>
+                    <div class="grid-item">
+                        <h3>当地向导</h3>
+                        <p>配备经验丰富的当地向导，带您深入了解目的地文化。</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="about" class="content-section">
+                <h2>关于我们</h2>
+                <p>我们是一群热爱旅行、经验丰富的专业人士，致力于将最美好的旅行体验带给您。自成立以来，我们已经帮助成千上万的客户实现了他们的旅行梦想，并赢得了广泛的赞誉。我们相信，每一次旅行都是一次发现自我、拓展视野的机会。我们期待与您同行，共同创造难忘的回忆！</p>
+                <p>我们的使命是让旅行变得更简单、更愉快、更富有意义。选择我们，选择放心。</p>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div id="contact" class="footer-section">
+                <h4>联系我们</h4>
+                <p>邮箱: info@yourtravel.com</p>
+                <p>电话: +886 912 345 678</p>
+                <p>地址: 台湾省台中市大安区旅行路88号</p>
+            </div>
+            <div class="footer-section">
+                <h4>快速链接</h4>
+                <ul>
+                    <li><a href="#home">首页</a></li>
+                    <li><a href="#destinations">目的地</a></li>
+                    <li><a href="#services">服务</a></li>
+                    <li><a href="#about">关于我们</a></li>
+                    <li><a href="#">常见问题</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>关注我们</h4>
+                <div class="social-links">
+                    <a href="#" target="_blank" title="Facebook"><img src="https://img.icons8.com/ios-filled/24/ffffff/facebook-new.png" alt="Facebook"></a>
+                    <a href="#" target="_blank" title="Instagram"><img src="https://img.icons8.com/ios-filled/24/ffffff/instagram-new.png" alt="Instagram"></a>
+                    <a href="#" target="_blank" title="Twitter"><img src="https://img.icons8.com/ios-filled/24/ffffff/twitter-circled--v1.png" alt="Twitter"></a>
+                    <a href="#" target="_blank" title="LinkedIn"><img src="https://img.icons8.com/ios-filled/24/ffffff/linkedin.png" alt="LinkedIn"></a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 全球漫游. 版权所有.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

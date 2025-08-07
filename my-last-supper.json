@@ -1,0 +1,15 @@
+{
+  "name": "The Last Supper",
+  "description": "This is the description of my first NFT.",
+  "image": "ipfs://bafybeiemwjxm4i2akeqi42e7maz6ah36tzmsgdahvtygcm7hlbmni4kika",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "Blue"
+    },
+    {
+      "trait_type": "Color",
+      "value": "Red"
+    }
+  ]
+}

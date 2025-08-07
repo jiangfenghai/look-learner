@@ -1,0 +1,15 @@
+{
+  "name": "My First NFT",
+  "description": "This is the description of my first NFT.",
+  "image": ""https://ipfs.io/ipfs:/bafybeigrftjlw7agbkiiu7lsal4p3k5ih4kvpd63pc5dti5p3bjoy4qx34",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "Blue"
+    },
+    {
+      "trait_type": "Color",
+      "value": "Red"
+    }
+  ]
+}

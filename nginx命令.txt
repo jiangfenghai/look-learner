@@ -1,0 +1,5 @@
+sudo systemctl stop nginx  关闭nginx
+sudo systemctl start nginx 开启nginx
+nginx -s reload  重启nginx
+ngin -t  测试nginx
+sudo certbot --nginx      创建https协议

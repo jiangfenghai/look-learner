@@ -1,0 +1,18 @@
+初始化
+
+git init -y 
+
+将文件放入缓冲区
+git add .
+
+将文件提交到本地仓库中
+git commit 
+
+切换分支
+git branch -M main
+
+连接远程仓库
+git remote add origig  ssh地址
+
+将提交到本地仓库中
+git push  -u origin  main 

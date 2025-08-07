@@ -1,0 +1,26 @@
+写合约
+
+      const provider = new ethers.BrowserProvider(window.ethereum);
+        const signer = await provider.getSigner();
+        const nftContract = new ethers.Contract(import.meta.env.VITE_APP_REGISTER_CONTRACT_ADDRESS, registerNFTAbi, signer);
+  useEffect(() => {
+        const getArtistWorks = async () => {
+              const provider = new ethers.BrowserProvider(window.ethereum);
+        const signer = await provider.getSigner();
+        const nftContract = new ethers.Contract(import.meta.env.VITE_APP_REGISTER_CONTRACT_ADDRESS, registerNFTAbi, signer);
+        }
+        getArtistWorks()
+    }, [])
+读合约
+
+  useEffect(() => {
+        const getArtistWorks = async () => {
+            const provider = new ethers.JsonRpcProvider(import.meta.env.VITE_RPC_URL);
+            const contract = new ethers.Contract(import.meta.env.VITE_APP_REGISTER_CONTRACT_ADDRESS, registerNFTAbi, provider);
+            const artWorkInfo = await contract.getArtWorkByTokenId(tokenid)
+            console.log("artWorkInfo", artWorkInfo)
+            setSelectedImage(artWorkInfo.uris[0])
+            setArtworkInfo(artWorkInfo)
+        }
+        getArtistWorks()
+    }, [])
