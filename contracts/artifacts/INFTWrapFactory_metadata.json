@@ -1,0 +1,252 @@
+{
+	"compiler": {
+		"version": "0.8.28+commit.7893614a"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					}
+				],
+				"name": "getUserMintTokens",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "tokenId",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "chainId",
+								"type": "uint256"
+							},
+							{
+								"internalType": "string",
+								"name": "tick",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "protocol",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "amount",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "owner",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "contractAddr",
+								"type": "address"
+							}
+						],
+						"internalType": "struct INFTWrapFactory.EthscriptionToNFT[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "getWrappedScriptionByTokenId",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "tokenId",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "chainId",
+								"type": "uint256"
+							},
+							{
+								"internalType": "string",
+								"name": "tick",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "protocol",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "amount",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "owner",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "contractAddr",
+								"type": "address"
+							}
+						],
+						"internalType": "struct INFTWrapFactory.EthscriptionToNFT",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					}
+				],
+				"name": "unWrapScription",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "tokenId",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "chainId",
+								"type": "uint256"
+							},
+							{
+								"internalType": "string",
+								"name": "tick",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "protocol",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "amount",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "owner",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "contractAddr",
+								"type": "address"
+							}
+						],
+						"internalType": "struct INFTWrapFactory.EthscriptionToNFT",
+						"name": "payload",
+						"type": "tuple"
+					},
+					{
+						"internalType": "uint256",
+						"name": "nonce",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "blockHeight",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint8[]",
+						"name": "v",
+						"type": "uint8[]"
+					},
+					{
+						"internalType": "bytes32[]",
+						"name": "r",
+						"type": "bytes32[]"
+					},
+					{
+						"internalType": "bytes32[]",
+						"name": "s",
+						"type": "bytes32[]"
+					}
+				],
+				"name": "wrapScriptionToNFT",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"nftProject/interfaces/INFTWrapFactory.sol": "INFTWrapFactory"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 500
+		},
+		"remappings": [],
+		"viaIR": true
+	},
+	"sources": {
+		"nftProject/interfaces/INFTWrapFactory.sol": {
+			"keccak256": "0x504cfb63a317d716f0090381598beda151a927cc0248895e0bfebd04df3d9a3f",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://5dfe9cffe48a8422f09ca04741342dbb990305434531308aedb8487c8cb9498c",
+				"dweb:/ipfs/QmU19cGEGVfDG4B3qg2urMz7rdvh6Kdkj7RmfuvrGZZohj"
+			]
+		}
+	},
+	"version": 1
+}

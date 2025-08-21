@@ -1,0 +1,1566 @@
+{
+	"deploy": {
+		"VM:-": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"main:1": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"ropsten:3": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"rinkeby:4": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"kovan:42": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"goerli:5": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"Custom": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		}
+	},
+	"data": {
+		"bytecode": {
+			"functionDebugData": {},
+			"generatedSources": [],
+			"linkReferences": {},
+			"object": "",
+			"opcodes": "",
+			"sourceMap": ""
+		},
+		"deployedBytecode": {
+			"functionDebugData": {},
+			"generatedSources": [],
+			"immutableReferences": {},
+			"linkReferences": {},
+			"object": "",
+			"opcodes": "",
+			"sourceMap": ""
+		},
+		"gasEstimates": null,
+		"methodIdentifiers": {
+			"accessableList(uint256)": "cc2a717b",
+			"accumulateTradingCount()": "c767a141",
+			"accumulateVolume(uint256,address)": "857eab22",
+			"createOrder(bytes32,(bool,bytes32,address,uint256,string,address,(string,string,string,uint256,uint256),uint256,address,uint256,uint256))": "88f3528e",
+			"createTradeRecord(bytes32,address,address,string)": "d1f5d212",
+			"deleteOrder(bytes32)": "87a61cbd",
+			"getAllowableList()": "89adacf2",
+			"getMyOrders(address)": "d3284d8e",
+			"getOrders(uint256,uint256)": "8f72fc77",
+			"getTotal()": "775a25e3",
+			"getTradeRecordsByAddress(address)": "d25285f5",
+			"getTradingCount()": "a8a6d538",
+			"getVolume()": "c67bbc24",
+			"getVolumeByToken(address)": "a54247ae",
+			"isAccessable(address)": "bc4998b1",
+			"isListed(address,uint256)": "cdb3cd25",
+			"myOrders(address,uint256)": "35ebd1c6",
+			"orderIDIndex(bytes32)": "52e30497",
+			"orderIDs(uint256)": "d7f23b61",
+			"orders(bytes32)": "9c3f1e90",
+			"setAccessableAddr(address,bool)": "2b0d6076",
+			"setListPrice(bytes32,uint256)": "e0f2bdd3",
+			"setOrderStatus(bytes32,bool)": "e35b5e1d",
+			"tradingCount()": "5300f7d4",
+			"tradingRecords(address,uint256)": "27e7a2b7",
+			"volume()": "c618a1e4",
+			"volumeByToken(address)": "6ef19c9d"
+		}
+	},
+	"abi": [
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": false,
+					"internalType": "bytes32",
+					"name": "orderId",
+					"type": "bytes32"
+				},
+				{
+					"indexed": true,
+					"internalType": "address",
+					"name": "wrappedNFTContract",
+					"type": "address"
+				},
+				{
+					"indexed": true,
+					"internalType": "uint256",
+					"name": "tokenId",
+					"type": "uint256"
+				},
+				{
+					"indexed": false,
+					"internalType": "string",
+					"name": "p",
+					"type": "string"
+				},
+				{
+					"indexed": false,
+					"internalType": "string",
+					"name": "op",
+					"type": "string"
+				},
+				{
+					"indexed": false,
+					"internalType": "string",
+					"name": "tick",
+					"type": "string"
+				},
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "amt",
+					"type": "uint256"
+				},
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "limit",
+					"type": "uint256"
+				},
+				{
+					"indexed": false,
+					"internalType": "address",
+					"name": "seller",
+					"type": "address"
+				},
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "unitPrice",
+					"type": "uint256"
+				},
+				{
+					"indexed": false,
+					"internalType": "string",
+					"name": "symbol",
+					"type": "string"
+				},
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "createTime",
+					"type": "uint256"
+				}
+			],
+			"name": "OrderListed",
+			"type": "event"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": false,
+					"internalType": "bytes32",
+					"name": "orderId",
+					"type": "bytes32"
+				},
+				{
+					"indexed": false,
+					"internalType": "address",
+					"name": "buyer",
+					"type": "address"
+				},
+				{
+					"indexed": false,
+					"internalType": "address",
+					"name": "seller",
+					"type": "address"
+				},
+				{
+					"indexed": false,
+					"internalType": "string",
+					"name": "p",
+					"type": "string"
+				},
+				{
+					"indexed": false,
+					"internalType": "string",
+					"name": "op",
+					"type": "string"
+				},
+				{
+					"indexed": false,
+					"internalType": "string",
+					"name": "tick",
+					"type": "string"
+				},
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "amt",
+					"type": "uint256"
+				},
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "limit",
+					"type": "uint256"
+				},
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "unitPrice",
+					"type": "uint256"
+				},
+				{
+					"indexed": false,
+					"internalType": "string",
+					"name": "symbol",
+					"type": "string"
+				},
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "soldTime",
+					"type": "uint256"
+				}
+			],
+			"name": "OrderSold",
+			"type": "event"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": false,
+					"internalType": "bytes32",
+					"name": "orderId",
+					"type": "bytes32"
+				},
+				{
+					"indexed": false,
+					"internalType": "string",
+					"name": "p",
+					"type": "string"
+				},
+				{
+					"indexed": false,
+					"internalType": "string",
+					"name": "op",
+					"type": "string"
+				},
+				{
+					"indexed": false,
+					"internalType": "string",
+					"name": "tick",
+					"type": "string"
+				},
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "amt",
+					"type": "uint256"
+				},
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "limit",
+					"type": "uint256"
+				},
+				{
+					"indexed": false,
+					"internalType": "address",
+					"name": "seller",
+					"type": "address"
+				},
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "unitPrice",
+					"type": "uint256"
+				},
+				{
+					"indexed": false,
+					"internalType": "string",
+					"name": "symbol",
+					"type": "string"
+				},
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "unlistTime",
+					"type": "uint256"
+				}
+			],
+			"name": "OrderUnlisted",
+			"type": "event"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": false,
+					"internalType": "bytes32",
+					"name": "orderId",
+					"type": "bytes32"
+				},
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "newUnitPrice",
+					"type": "uint256"
+				},
+				{
+					"indexed": false,
+					"internalType": "string",
+					"name": "p",
+					"type": "string"
+				},
+				{
+					"indexed": false,
+					"internalType": "string",
+					"name": "op",
+					"type": "string"
+				},
+				{
+					"indexed": false,
+					"internalType": "string",
+					"name": "tick",
+					"type": "string"
+				},
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "amt",
+					"type": "uint256"
+				},
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "limit",
+					"type": "uint256"
+				},
+				{
+					"indexed": false,
+					"internalType": "address",
+					"name": "seller",
+					"type": "address"
+				},
+				{
+					"indexed": false,
+					"internalType": "string",
+					"name": "symbol",
+					"type": "string"
+				},
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "updateTime",
+					"type": "uint256"
+				}
+			],
+			"name": "OrderUpdated",
+			"type": "event"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": false,
+					"internalType": "address",
+					"name": "Sender",
+					"type": "address"
+				},
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "Value",
+					"type": "uint256"
+				}
+			],
+			"name": "Received",
+			"type": "event"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": false,
+					"internalType": "string",
+					"name": "p",
+					"type": "string"
+				},
+				{
+					"indexed": false,
+					"internalType": "string",
+					"name": "op",
+					"type": "string"
+				},
+				{
+					"indexed": false,
+					"internalType": "string",
+					"name": "tick",
+					"type": "string"
+				},
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "amount",
+					"type": "uint256"
+				},
+				{
+					"indexed": false,
+					"internalType": "address",
+					"name": "owner",
+					"type": "address"
+				}
+			],
+			"name": "UnWrap",
+			"type": "event"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": false,
+					"internalType": "string",
+					"name": "p",
+					"type": "string"
+				},
+				{
+					"indexed": false,
+					"internalType": "string",
+					"name": "tick",
+					"type": "string"
+				},
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "amount",
+					"type": "uint256"
+				},
+				{
+					"indexed": false,
+					"internalType": "address",
+					"name": "owner",
+					"type": "address"
+				},
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "chainId",
+					"type": "uint256"
+				}
+			],
+			"name": "Wrap",
+			"type": "event"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				}
+			],
+			"name": "accessableList",
+			"outputs": [
+				{
+					"internalType": "address",
+					"name": "",
+					"type": "address"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "accumulateTradingCount",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "value",
+					"type": "uint256"
+				},
+				{
+					"internalType": "address",
+					"name": "tokenContract",
+					"type": "address"
+				}
+			],
+			"name": "accumulateVolume",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "bytes32",
+					"name": "orderId",
+					"type": "bytes32"
+				},
+				{
+					"components": [
+						{
+							"internalType": "bool",
+							"name": "exists",
+							"type": "bool"
+						},
+						{
+							"internalType": "bytes32",
+							"name": "orderId",
+							"type": "bytes32"
+						},
+						{
+							"internalType": "address",
+							"name": "wrappedNFTContract",
+							"type": "address"
+						},
+						{
+							"internalType": "uint256",
+							"name": "tokenId",
+							"type": "uint256"
+						},
+						{
+							"internalType": "string",
+							"name": "tokenSymbol",
+							"type": "string"
+						},
+						{
+							"internalType": "address",
+							"name": "tokenContract",
+							"type": "address"
+						},
+						{
+							"components": [
+								{
+									"internalType": "string",
+									"name": "p",
+									"type": "string"
+								},
+								{
+									"internalType": "string",
+									"name": "op",
+									"type": "string"
+								},
+								{
+									"internalType": "string",
+									"name": "tick",
+									"type": "string"
+								},
+								{
+									"internalType": "uint256",
+									"name": "amt",
+									"type": "uint256"
+								},
+								{
+									"internalType": "uint256",
+									"name": "limit",
+									"type": "uint256"
+								}
+							],
+							"internalType": "struct IInscriptionCommon.Inscription",
+							"name": "inscription",
+							"type": "tuple"
+						},
+						{
+							"internalType": "uint256",
+							"name": "remainingAmt",
+							"type": "uint256"
+						},
+						{
+							"internalType": "address",
+							"name": "seller",
+							"type": "address"
+						},
+						{
+							"internalType": "uint256",
+							"name": "unitPrice",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "createTime",
+							"type": "uint256"
+						}
+					],
+					"internalType": "struct IInscriptionCommon.Order",
+					"name": "payload",
+					"type": "tuple"
+				}
+			],
+			"name": "createOrder",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "bytes32",
+					"name": "orderId",
+					"type": "bytes32"
+				},
+				{
+					"internalType": "address",
+					"name": "from",
+					"type": "address"
+				},
+				{
+					"internalType": "address",
+					"name": "to",
+					"type": "address"
+				},
+				{
+					"internalType": "string",
+					"name": "tradeEvent",
+					"type": "string"
+				}
+			],
+			"name": "createTradeRecord",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "bytes32",
+					"name": "orderId",
+					"type": "bytes32"
+				}
+			],
+			"name": "deleteOrder",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "getAllowableList",
+			"outputs": [
+				{
+					"internalType": "address[]",
+					"name": "",
+					"type": "address[]"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "owner",
+					"type": "address"
+				}
+			],
+			"name": "getMyOrders",
+			"outputs": [
+				{
+					"components": [
+						{
+							"internalType": "bool",
+							"name": "exists",
+							"type": "bool"
+						},
+						{
+							"internalType": "bytes32",
+							"name": "orderId",
+							"type": "bytes32"
+						},
+						{
+							"internalType": "address",
+							"name": "wrappedNFTContract",
+							"type": "address"
+						},
+						{
+							"internalType": "uint256",
+							"name": "tokenId",
+							"type": "uint256"
+						},
+						{
+							"internalType": "string",
+							"name": "tokenSymbol",
+							"type": "string"
+						},
+						{
+							"internalType": "address",
+							"name": "tokenContract",
+							"type": "address"
+						},
+						{
+							"components": [
+								{
+									"internalType": "string",
+									"name": "p",
+									"type": "string"
+								},
+								{
+									"internalType": "string",
+									"name": "op",
+									"type": "string"
+								},
+								{
+									"internalType": "string",
+									"name": "tick",
+									"type": "string"
+								},
+								{
+									"internalType": "uint256",
+									"name": "amt",
+									"type": "uint256"
+								},
+								{
+									"internalType": "uint256",
+									"name": "limit",
+									"type": "uint256"
+								}
+							],
+							"internalType": "struct IInscriptionCommon.Inscription",
+							"name": "inscription",
+							"type": "tuple"
+						},
+						{
+							"internalType": "uint256",
+							"name": "remainingAmt",
+							"type": "uint256"
+						},
+						{
+							"internalType": "address",
+							"name": "seller",
+							"type": "address"
+						},
+						{
+							"internalType": "uint256",
+							"name": "unitPrice",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "createTime",
+							"type": "uint256"
+						}
+					],
+					"internalType": "struct IInscriptionCommon.Order[]",
+					"name": "",
+					"type": "tuple[]"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "page",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "pageSize",
+					"type": "uint256"
+				}
+			],
+			"name": "getOrders",
+			"outputs": [
+				{
+					"components": [
+						{
+							"internalType": "bool",
+							"name": "exists",
+							"type": "bool"
+						},
+						{
+							"internalType": "bytes32",
+							"name": "orderId",
+							"type": "bytes32"
+						},
+						{
+							"internalType": "address",
+							"name": "wrappedNFTContract",
+							"type": "address"
+						},
+						{
+							"internalType": "uint256",
+							"name": "tokenId",
+							"type": "uint256"
+						},
+						{
+							"internalType": "string",
+							"name": "tokenSymbol",
+							"type": "string"
+						},
+						{
+							"internalType": "address",
+							"name": "tokenContract",
+							"type": "address"
+						},
+						{
+							"components": [
+								{
+									"internalType": "string",
+									"name": "p",
+									"type": "string"
+								},
+								{
+									"internalType": "string",
+									"name": "op",
+									"type": "string"
+								},
+								{
+									"internalType": "string",
+									"name": "tick",
+									"type": "string"
+								},
+								{
+									"internalType": "uint256",
+									"name": "amt",
+									"type": "uint256"
+								},
+								{
+									"internalType": "uint256",
+									"name": "limit",
+									"type": "uint256"
+								}
+							],
+							"internalType": "struct IInscriptionCommon.Inscription",
+							"name": "inscription",
+							"type": "tuple"
+						},
+						{
+							"internalType": "uint256",
+							"name": "remainingAmt",
+							"type": "uint256"
+						},
+						{
+							"internalType": "address",
+							"name": "seller",
+							"type": "address"
+						},
+						{
+							"internalType": "uint256",
+							"name": "unitPrice",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "createTime",
+							"type": "uint256"
+						}
+					],
+					"internalType": "struct IInscriptionCommon.Order[]",
+					"name": "",
+					"type": "tuple[]"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "getTotal",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "wallet",
+					"type": "address"
+				}
+			],
+			"name": "getTradeRecordsByAddress",
+			"outputs": [
+				{
+					"components": [
+						{
+							"components": [
+								{
+									"internalType": "bool",
+									"name": "exists",
+									"type": "bool"
+								},
+								{
+									"internalType": "bytes32",
+									"name": "orderId",
+									"type": "bytes32"
+								},
+								{
+									"internalType": "address",
+									"name": "wrappedNFTContract",
+									"type": "address"
+								},
+								{
+									"internalType": "uint256",
+									"name": "tokenId",
+									"type": "uint256"
+								},
+								{
+									"internalType": "string",
+									"name": "tokenSymbol",
+									"type": "string"
+								},
+								{
+									"internalType": "address",
+									"name": "tokenContract",
+									"type": "address"
+								},
+								{
+									"components": [
+										{
+											"internalType": "string",
+											"name": "p",
+											"type": "string"
+										},
+										{
+											"internalType": "string",
+											"name": "op",
+											"type": "string"
+										},
+										{
+											"internalType": "string",
+											"name": "tick",
+											"type": "string"
+										},
+										{
+											"internalType": "uint256",
+											"name": "amt",
+											"type": "uint256"
+										},
+										{
+											"internalType": "uint256",
+											"name": "limit",
+											"type": "uint256"
+										}
+									],
+									"internalType": "struct IInscriptionCommon.Inscription",
+									"name": "inscription",
+									"type": "tuple"
+								},
+								{
+									"internalType": "uint256",
+									"name": "remainingAmt",
+									"type": "uint256"
+								},
+								{
+									"internalType": "address",
+									"name": "seller",
+									"type": "address"
+								},
+								{
+									"internalType": "uint256",
+									"name": "unitPrice",
+									"type": "uint256"
+								},
+								{
+									"internalType": "uint256",
+									"name": "createTime",
+									"type": "uint256"
+								}
+							],
+							"internalType": "struct IInscriptionCommon.Order",
+							"name": "order",
+							"type": "tuple"
+						},
+						{
+							"internalType": "address",
+							"name": "from",
+							"type": "address"
+						},
+						{
+							"internalType": "address",
+							"name": "to",
+							"type": "address"
+						},
+						{
+							"internalType": "string",
+							"name": "op",
+							"type": "string"
+						},
+						{
+							"internalType": "uint256",
+							"name": "time",
+							"type": "uint256"
+						}
+					],
+					"internalType": "struct IInscriptionCommon.TradeRecord[]",
+					"name": "",
+					"type": "tuple[]"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "getTradingCount",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "getVolume",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "tokenContract",
+					"type": "address"
+				}
+			],
+			"name": "getVolumeByToken",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "",
+					"type": "address"
+				}
+			],
+			"name": "isAccessable",
+			"outputs": [
+				{
+					"internalType": "bool",
+					"name": "",
+					"type": "bool"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "nftContract",
+					"type": "address"
+				},
+				{
+					"internalType": "uint256",
+					"name": "tokenId",
+					"type": "uint256"
+				}
+			],
+			"name": "isListed",
+			"outputs": [
+				{
+					"internalType": "bool",
+					"name": "",
+					"type": "bool"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "",
+					"type": "address"
+				},
+				{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				}
+			],
+			"name": "myOrders",
+			"outputs": [
+				{
+					"internalType": "bool",
+					"name": "exists",
+					"type": "bool"
+				},
+				{
+					"internalType": "bytes32",
+					"name": "orderId",
+					"type": "bytes32"
+				},
+				{
+					"internalType": "address",
+					"name": "wrappedNFTContract",
+					"type": "address"
+				},
+				{
+					"internalType": "uint256",
+					"name": "tokenId",
+					"type": "uint256"
+				},
+				{
+					"internalType": "string",
+					"name": "tokenSymbol",
+					"type": "string"
+				},
+				{
+					"internalType": "address",
+					"name": "tokenContract",
+					"type": "address"
+				},
+				{
+					"components": [
+						{
+							"internalType": "string",
+							"name": "p",
+							"type": "string"
+						},
+						{
+							"internalType": "string",
+							"name": "op",
+							"type": "string"
+						},
+						{
+							"internalType": "string",
+							"name": "tick",
+							"type": "string"
+						},
+						{
+							"internalType": "uint256",
+							"name": "amt",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "limit",
+							"type": "uint256"
+						}
+					],
+					"internalType": "struct IInscriptionCommon.Inscription",
+					"name": "inscription",
+					"type": "tuple"
+				},
+				{
+					"internalType": "uint256",
+					"name": "remainingAmt",
+					"type": "uint256"
+				},
+				{
+					"internalType": "address",
+					"name": "seller",
+					"type": "address"
+				},
+				{
+					"internalType": "uint256",
+					"name": "unitPrice",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "createTime",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "bytes32",
+					"name": "",
+					"type": "bytes32"
+				}
+			],
+			"name": "orderIDIndex",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				}
+			],
+			"name": "orderIDs",
+			"outputs": [
+				{
+					"internalType": "bytes32",
+					"name": "",
+					"type": "bytes32"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "bytes32",
+					"name": "",
+					"type": "bytes32"
+				}
+			],
+			"name": "orders",
+			"outputs": [
+				{
+					"internalType": "bool",
+					"name": "exists",
+					"type": "bool"
+				},
+				{
+					"internalType": "bytes32",
+					"name": "orderId",
+					"type": "bytes32"
+				},
+				{
+					"internalType": "address",
+					"name": "wrappedNFTContract",
+					"type": "address"
+				},
+				{
+					"internalType": "uint256",
+					"name": "tokenId",
+					"type": "uint256"
+				},
+				{
+					"internalType": "string",
+					"name": "tokenSymbol",
+					"type": "string"
+				},
+				{
+					"internalType": "address",
+					"name": "tokenContract",
+					"type": "address"
+				},
+				{
+					"components": [
+						{
+							"internalType": "string",
+							"name": "p",
+							"type": "string"
+						},
+						{
+							"internalType": "string",
+							"name": "op",
+							"type": "string"
+						},
+						{
+							"internalType": "string",
+							"name": "tick",
+							"type": "string"
+						},
+						{
+							"internalType": "uint256",
+							"name": "amt",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "limit",
+							"type": "uint256"
+						}
+					],
+					"internalType": "struct IInscriptionCommon.Inscription",
+					"name": "inscription",
+					"type": "tuple"
+				},
+				{
+					"internalType": "uint256",
+					"name": "remainingAmt",
+					"type": "uint256"
+				},
+				{
+					"internalType": "address",
+					"name": "seller",
+					"type": "address"
+				},
+				{
+					"internalType": "uint256",
+					"name": "unitPrice",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "createTime",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "operator",
+					"type": "address"
+				},
+				{
+					"internalType": "bool",
+					"name": "status",
+					"type": "bool"
+				}
+			],
+			"name": "setAccessableAddr",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "bytes32",
+					"name": "orderId",
+					"type": "bytes32"
+				},
+				{
+					"internalType": "uint256",
+					"name": "price",
+					"type": "uint256"
+				}
+			],
+			"name": "setListPrice",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "bytes32",
+					"name": "orderId",
+					"type": "bytes32"
+				},
+				{
+					"internalType": "bool",
+					"name": "status",
+					"type": "bool"
+				}
+			],
+			"name": "setOrderStatus",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "tradingCount",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "",
+					"type": "address"
+				},
+				{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				}
+			],
+			"name": "tradingRecords",
+			"outputs": [
+				{
+					"components": [
+						{
+							"internalType": "bool",
+							"name": "exists",
+							"type": "bool"
+						},
+						{
+							"internalType": "bytes32",
+							"name": "orderId",
+							"type": "bytes32"
+						},
+						{
+							"internalType": "address",
+							"name": "wrappedNFTContract",
+							"type": "address"
+						},
+						{
+							"internalType": "uint256",
+							"name": "tokenId",
+							"type": "uint256"
+						},
+						{
+							"internalType": "string",
+							"name": "tokenSymbol",
+							"type": "string"
+						},
+						{
+							"internalType": "address",
+							"name": "tokenContract",
+							"type": "address"
+						},
+						{
+							"components": [
+								{
+									"internalType": "string",
+									"name": "p",
+									"type": "string"
+								},
+								{
+									"internalType": "string",
+									"name": "op",
+									"type": "string"
+								},
+								{
+									"internalType": "string",
+									"name": "tick",
+									"type": "string"
+								},
+								{
+									"internalType": "uint256",
+									"name": "amt",
+									"type": "uint256"
+								},
+								{
+									"internalType": "uint256",
+									"name": "limit",
+									"type": "uint256"
+								}
+							],
+							"internalType": "struct IInscriptionCommon.Inscription",
+							"name": "inscription",
+							"type": "tuple"
+						},
+						{
+							"internalType": "uint256",
+							"name": "remainingAmt",
+							"type": "uint256"
+						},
+						{
+							"internalType": "address",
+							"name": "seller",
+							"type": "address"
+						},
+						{
+							"internalType": "uint256",
+							"name": "unitPrice",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "createTime",
+							"type": "uint256"
+						}
+					],
+					"internalType": "struct IInscriptionCommon.Order",
+					"name": "order",
+					"type": "tuple"
+				},
+				{
+					"internalType": "address",
+					"name": "from",
+					"type": "address"
+				},
+				{
+					"internalType": "address",
+					"name": "to",
+					"type": "address"
+				},
+				{
+					"internalType": "string",
+					"name": "op",
+					"type": "string"
+				},
+				{
+					"internalType": "uint256",
+					"name": "time",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "volume",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "",
+					"type": "address"
+				}
+			],
+			"name": "volumeByToken",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		}
+	]
+}

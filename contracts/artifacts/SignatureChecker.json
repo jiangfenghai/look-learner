@@ -1,0 +1,64 @@
+{
+	"deploy": {
+		"VM:-": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"main:1": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"ropsten:3": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"rinkeby:4": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"kovan:42": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"goerli:5": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"Custom": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		}
+	},
+	"data": {
+		"bytecode": {
+			"functionDebugData": {},
+			"generatedSources": [],
+			"linkReferences": {},
+			"object": "6080806040523460175760399081601c823930815050f35b5f80fdfe5f80fdfea26469706673582212203a6eff0b9f46015c9e0c54269eeafffeeda5a5ea8e4f3a3d602621ffd635bbad64736f6c634300081c0033",
+			"opcodes": "PUSH1 0x80 DUP1 PUSH1 0x40 MSTORE CALLVALUE PUSH1 0x17 JUMPI PUSH1 0x39 SWAP1 DUP2 PUSH1 0x1C DUP3 CODECOPY ADDRESS DUP2 POP POP RETURN JUMPDEST PUSH0 DUP1 REVERT INVALID PUSH0 DUP1 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 GASPRICE PUSH15 0xFF0B9F46015C9E0C54269EEAFFFEED 0xA5 0xA5 0xEA DUP15 0x4F GASPRICE RETURNDATASIZE PUSH1 0x26 0x21 SELFDESTRUCT 0xD6 CALLDATALOAD 0xBB 0xAD PUSH5 0x736F6C6343 STOP ADDMOD SHR STOP CALLER ",
+			"sourceMap": "365:2417:3:-:0;;;;;;;;;;;;;;;;;;;;;"
+		},
+		"deployedBytecode": {
+			"functionDebugData": {},
+			"generatedSources": [],
+			"immutableReferences": {},
+			"linkReferences": {},
+			"object": "5f80fdfea26469706673582212203a6eff0b9f46015c9e0c54269eeafffeeda5a5ea8e4f3a3d602621ffd635bbad64736f6c634300081c0033",
+			"opcodes": "PUSH0 DUP1 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 GASPRICE PUSH15 0xFF0B9F46015C9E0C54269EEAFFFEED 0xA5 0xA5 0xEA DUP15 0x4F GASPRICE RETURNDATASIZE PUSH1 0x26 0x21 SELFDESTRUCT 0xD6 CALLDATALOAD 0xBB 0xAD PUSH5 0x736F6C6343 STOP ADDMOD SHR STOP CALLER ",
+			"sourceMap": "365:2417:3:-:0;;"
+		},
+		"gasEstimates": {
+			"creation": {
+				"codeDepositCost": "11400",
+				"executionCost": "infinite",
+				"totalCost": "infinite"
+			},
+			"internal": {
+				"recover(bytes32,uint8,bytes32,bytes32)": "infinite",
+				"verify(bytes32,address,uint8,bytes32,bytes32,bytes32)": "infinite"
+			}
+		},
+		"methodIdentifiers": {}
+	},
+	"abi": []
+}
